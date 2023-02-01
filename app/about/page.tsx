@@ -2,10 +2,11 @@ import { use } from 'react'
 import { getProfile } from '../lib/data'
 import { hackBold, hackRegular, vcrOsdMono } from '../styles/fonts'
 import { Skills } from '../components/home/Skills'
+import { profile } from '../../pages/api/profile'
 
 export default function About() {
-  const profileResponse = use(getProfile())
-  const profile = profileResponse.results
+  // const profileResponse = use(getProfile())
+  // const profile = profileResponse.results
 
   return (
     <div className="flex flex-col items-center p-16 lg:p-40 text-center lg:text-left">

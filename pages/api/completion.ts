@@ -9,8 +9,10 @@ import { OpenAIDataType } from '../../types'
 // const openai = new OpenAIApi(configuration)
 const openAIDescriptions = openaijson as Array<OpenAIDataType>
 
-function getRandomStyle(arr: Array<any>) {
-  return arr[Math.floor(Math.random() * arr.length)]
+export function getRandomStyle() {
+  return openAIDescriptions[
+    Math.floor(Math.random() * openAIDescriptions.length)
+  ]
 }
 
 export default async function handler(
@@ -29,6 +31,6 @@ export default async function handler(
   // })
   // res.status(200).json({ result: completion.data })
 
-  const style = getRandomStyle(openAIDescriptions)
+  const style = getRandomStyle()
   res.status(200).json({ results: style })
 }
