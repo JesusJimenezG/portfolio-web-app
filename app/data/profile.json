@@ -1,0 +1,48 @@
+{
+    "title": "Software Developer",
+    "name": "Jesus Jimenez",
+    "description": "Hi there! I'm Jesus Jimenez. I'm an experienced software developer from Venezuela. I've been freelancing for 2 years and I'm dedicated to delivering high-quality work.\n\nI specialize in full-stack web development and I'm well-versed in modern technologies. I'm passionate about software engineering and I'm particularly interested in Back-end web development, DevOps, data engineering, machine learning, and cybersecurity.\n\nI'm flexible, and always eager to learn new technologies, and I'm confident that my skills and dedication will bring value to your team and contribute to the success of your project. Let's work together and make your project a success!",
+    "about": "My name is Jesus Jimenez, and I am a Software developer and freelancer based in Venezuela. I was born on September 22, 1998 and I am currently pursuing my Computer Engineering degree at the \"Universidad Nacional Experimental del Tachira (UNET)\" in San Cristobal, Venezuela. In February 2023, I will be starting my Master's degree in Big Data at the IMF Academy in Madrid, Spain. I am also taking online courses in Software Architecture, Full Stack, DevOps, Data Science, and Data Engineering on Coursera, Udemy, and Platzi.\n\nI have a passion for software engineering, and all-things programming. At the age of 9 I hosted my own Habbo Retro server on a blog, that was my very first experience with programming, couldn't hosted it online because didn't had the knowledge at the moment. I'd asked for help in some forum live chat and when someone replied to me in English, I immediately left the chat.😁 \n\nMy areas of interest in the software engineering includes back-end web development, DevOps, data engineering, machine learning engineering, Artificial Intelligence, and I do dream of hacking an evil conglomerated too. I have worked with C++, Java, Flutter, Nginx, node-addon-API, Electron, GraphQL, IBMCloud, and TypeScript. I am skilled in using ChatGPT to optimize my workflow and increase efficiency, resulting in faster and more accurate completion of projects and well-documented code for easy maintenance and understanding.\n\nIn my free time, I enjoy music and playing progressive rock/metal guitar. I am also an avid fan of Magic The Gathering and video games such as League of Legends, Dota 2, and Age of Empires. My favorite bands include Opeth, Soen, Karnivool, Tool, and Leprous.",
+    "skills": {
+        "programmingLanguages": [
+            "Python",
+            "Javascript",
+            "Typescript",
+            "Kotlin",
+            "Java",
+            "C++",
+            "C",
+            "SQL"
+        ],
+        "languages":[
+            {"language": "Spanish", "level": "Native"},
+            {"language": "English", "level": "Fluent"},
+            {"language": "Swedish", "level": "Beginner"}
+        ],
+        "professionalSkills": [
+            "Next.js",
+            "Django",
+            "VueJs",
+            "React",
+            "ChatGPT",
+            "PostgreSQL",
+            "Firebase",
+            "Git",
+            "Linux"
+        ],
+        "nonProfessionalSkills": [
+            "Nodejs",
+            "NoSQL",
+            "Docker",
+            "DevOps",
+            "Data Engineering",
+            "OpenAI",
+            "IBM Cloud",
+            "Node-addo-API",
+            "Electron",
+            "GraphQL",
+            "Nginx",
+            "Flutter"
+       ]
+    }
+}

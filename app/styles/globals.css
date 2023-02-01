@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f8f9fa; /* Add a default background color */
+  overflow-x: hidden;
+}
+
+a {
+  color: #f29; /* Use Bootstrap's primary color for links */
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px; /* Set a default font size */
+  line-height: 1.5; /* Set a default line height */
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: #f8f9fa;
+    background: #010205;
+  }
+  a {
+    color: #f29; /* Use a slightly lighter shade for links in dark mode */
+  }
+}

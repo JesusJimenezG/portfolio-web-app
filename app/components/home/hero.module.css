@@ -1,0 +1,105 @@
+.typewriter {
+  color: #0000;
+  overflow: hidden;
+  background: linear-gradient(-90deg, #fafafa 5px, #0000 0) 5px 0,
+    linear-gradient(#fafafa 0 0) 0 0;
+  background-size: calc(var(--n) * 1ch + 15%) 200%;
+  -webkit-background-clip: padding-box, text;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+  animation: b 0.7s infinite steps(1),
+    t calc(var(--n) * 0.1s) steps(var(--n)) forwards;
+}
+
+@keyframes t {
+  from {
+    background-size: 0 200%;
+  }
+}
+@keyframes b {
+  50% {
+    background-position: 0 -100%, 0 0;
+  }
+}
+
+/* Code belongs to: https://codepen.io/FelixLuciano/pen/dyoPKKK */
+.figure {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stripeswraper {
+  border-radius: 50%;
+  filter: drop-shadow(0 0 20px #f29);
+  overflow: hidden;
+}
+
+.stripe {
+  width: 100%;
+  height: 15px;
+  background-color: #fff;
+  animation: scroll 1s linear infinite;
+}
+.smallstripe {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  animation: smallscroll 1s linear infinite;
+}
+@keyframes scroll {
+  from {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes smallscroll {
+  from {
+    transform: translateY(-10px);
+  }
+}
+
+.stripe + .stripe {
+  margin-top: 15px;
+}
+
+.smallstripe + .smallstripe {
+  margin-top: 5px;
+}
+
+.gradientmask {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to bottom, #92f 0%, #f29 100%);
+  mix-blend-mode: multiply;
+  position: absolute;
+  left: 45%;
+  bottom: 18%;
+  opacity: 0.9;
+  border-radius: 10%;
+  pointer-events: none;
+}
+
+.palmtree {
+  background-image: url(https://res.cloudinary.com/tecice/image/upload/v1581216237/palm-tree.png);
+  background-repeat: no-repeat;
+  /* background-color: #fafafa; */
+  /* transform: scale(0.7); */
+  position: absolute;
+}
+
+.figcaption {
+  color: #eee;
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+}
+
+.a {
+  color: #f29;
+  text-decoration: none;
+}
