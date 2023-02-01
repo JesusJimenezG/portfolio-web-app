@@ -58,21 +58,21 @@ export const Stripes = ({
 }
 
 export const Home = ({
-  openAIDescription,
   profile,
 }: {
   openAIDescription: OpenAIDataType
   profile: ProfileDataType
 }) => {
   const { data, isLoading, error } = useSWR('/api/completion/', fetcher)
+
+  const completion = data?.results
+
   const [isTypingDescription, setIsTypingDescription] = useState(true)
-  const [completion, setCompletion] = useState(openAIDescription)
 
   const refreshData = () => {
     // console.log('data at event handler: ', data)
     if (data) {
       // console.log('data: ', data.results)
-      setCompletion(data.results)
       setIsTypingDescription(true)
     }
   }
@@ -111,7 +111,9 @@ export const Home = ({
               small={false}
               className="absolute top-12"
             /> */}
-            <div className={styles.gradientmask}></div>
+            <div
+              className={`${styles.gradientmask} lg:w-2/4 h-full w-2/4 left-2/4 lg:bottom-[18%] bottom-[45%]`}
+            ></div>
             {/* <div
               className={`${styles.palmtree} lg:w-[520px] lg:h-[920px] lg:scale-50 lg:-translate-y-14`}
             ></div> */}
@@ -127,10 +129,10 @@ export const Home = ({
           <span>{`Hi, I'm ${profile.name}.`}</span>
         </h1>
         <h1 className="text-gray-200 lg:text-4xl md:text-3xl sm:text-2xl text-2xl font-bold py-3">
-          {`ChatGPT, please write my ${profile.title} description `}
+          {`ChatGPT, please write my ${profile.title} description`}
           <span
             className={`${vt323.className} tracking-wider font-medium font-mono ml-2 mt-2`}
-          >{`${completion?.style}: `}</span>
+          >{`${isLoading ? '' : ` ${completion?.style}`}: `}</span>
         </h1>
         <section title="header description">
           <span

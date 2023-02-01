@@ -72,13 +72,13 @@
 }
 
 .gradientmask {
-  width: 50%;
-  height: 100%;
+  /* width: 50%; */
+  /* height: 100%; */
   background: linear-gradient(to bottom, #92f 0%, #f29 100%);
   mix-blend-mode: multiply;
   position: absolute;
-  left: 45%;
-  bottom: 18%;
+  /* left: 45%; */
+  /* bottom: 18%; */
   opacity: 0.9;
   border-radius: 10%;
   pointer-events: none;

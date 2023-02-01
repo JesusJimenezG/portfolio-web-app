@@ -9,7 +9,7 @@ export default function HomePage() {
   // const profileResponse = use(getProfile())
 
   // const _profile = profile
-  const openAICompletion = getRandomStyle()
+  // const openAICompletion = getRandomStyle()
 
-  return <Home openAIDescription={openAICompletion} profile={profile} />
+  return <Home profile={profile} />
 }
