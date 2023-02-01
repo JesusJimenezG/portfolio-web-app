@@ -24,45 +24,7 @@ const fetcher = (url: string) =>
 
 import React from 'react'
 
-export const Stripes = ({
-  width,
-  height,
-  small,
-  className,
-}: {
-  width: string
-  height: string
-  small: boolean
-  className?: string
-}) => {
-  return (
-    <div className={`${styles.stripeswraper} ${width} ${height} ${className}`}>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
-    </div>
-  )
-}
-
-export const Home = ({
-  profile,
-}: {
-  openAIDescription: OpenAIDataType
-  profile: ProfileDataType
-}) => {
+export const Home = ({ profile }: { profile: ProfileDataType }) => {
   const { data, isLoading, error } = useSWR('/api/completion/', fetcher)
 
   const completion = data?.results
@@ -166,6 +128,39 @@ export const Home = ({
       >
         <HireMe />
       </div>
+    </div>
+  )
+}
+
+export const Stripes = ({
+  width,
+  height,
+  small,
+  className,
+}: {
+  width: string
+  height: string
+  small: boolean
+  className?: string
+}) => {
+  return (
+    <div className={`${styles.stripeswraper} ${width} ${height} ${className}`}>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
+      <div className={`${small ? styles.smallstripe : styles.stripe}`}></div>
     </div>
   )
 }

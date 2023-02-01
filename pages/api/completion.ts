@@ -19,7 +19,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log('called openai api')
   // Replaced with static data due openai api limit
   // console.log('prompt: ', req.body.prompt)
 
@@ -31,6 +30,12 @@ export default async function handler(
   // })
   // res.status(200).json({ result: completion.data })
 
-  const style = getRandomStyle()
+  const randomNumber = await fetch(
+    `https://us-central1-jesusjimenezg-web-app.cloudfunctions.net/randomNumber?max=${openAIDescriptions.length}`
+  )
+  if (!randomNumber.ok) {
+    res.status(500).json({ error: 'Error getting random number' })
+  }
+  const style = openAIDescriptions[await randomNumber.json()]
   res.status(200).json({ results: style })
 }
