@@ -9,10 +9,13 @@ module.exports = {
     extend: {
       fontFamily: {
         mono: [
-          'ui-monospace',
-          'SFMono-Regular',
+          'var(--font-vcr-osd-mono)',
+          'var(--font-vt323)',
+          'var(--font-ds-digital)',
+          'var(--font-hack-bold)',
+          'var(--font-hack-regular)',
+          'var(--font-linebeam)',
           'Consolas',
-          '"Liberation Mono"',
           'monospace',
         ],
         sans: [

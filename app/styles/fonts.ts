@@ -34,24 +34,10 @@ export const mukta = Mukta({
   variable: '--font-mukta',
 })
 
-export const majorMonoDisplay = Major_Mono_Display({
-  subsets: ['latin'],
-  weight: ['400'],
-})
-
-export const novaMono = Nova_Mono({
-  subsets: ['latin'],
-  weight: ['400'],
-})
-
 export const vt323 = VT323({
   subsets: ['latin'],
   weight: ['400'],
-})
-
-export const firaMono = Fira_Mono({
-  subsets: ['latin'],
-  weight: ['400'],
+  variable: '--font-vt323',
 })
 
 export const hackBold = localFont({
