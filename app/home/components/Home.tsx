@@ -3,9 +3,9 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { OpenAIDataType, ProfileDataType } from '../../lib/types'
 import styles from '../styles/hero.module.css'
-import { hackRegular, vcrOsdMono, vt323 } from '../../styles/fonts'
+import { hackRegular, lora, vcrOsdMono, vt323 } from '../../styles/fonts'
 import useSWR from 'swr'
-import HireMe from '../../lib/shared/components/HireMe'
+import HireMe from '../../lib/shared/components/about/HireMe'
 import QRCode from 'react-qr-code'
 
 const fetcher = (url: string) =>
@@ -41,9 +41,18 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
     }
   }, [isTypingDescription])
 
+  const search = () => {
+    if (completion!.style.includes('in the style of ')) {
+      const keyword = completion!.style.replace('in the style of ', '')
+      const link = `https://www.google.com/search?q=${keyword}`
+
+      window.open(link, '_blank')
+    }
+  }
+
   const refreshData = () => {
     mutate('/api/completion/')
-    setIsTypingDescription(true)
+    // setIsTypingDescription(true)
   }
 
   const StyleAnimEnded = () => {
@@ -56,6 +65,7 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
   }
 
   const generateNewDescription = () => {
+    setDescription('')
     refreshData()
     setIsTypingStyle(true)
   }
@@ -63,19 +73,19 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
   return (
     <div className="flex lg:flex-row-reverse lg:px-40 md:px-20 px-5 flex-col mx-auto my-auto justify-center items-center lg:mt-24">
       <div className="lg:w-2/5 w-2/5 my-auto justify-center">
-        <div className="lg:w-4/5 md:w-3/5 sm:w-3/5 w-3/5 mx-auto mt-6 border-gray-200 border-2 sm:rounded-full rounded-full lg:rounded-lg z-50">
+        <div className="lg:w-4/5 md:w-3/5 sm:w-3/5 w-3/5 mx-auto mt-6 border-gray-200 border-2 sm:rounded-full rounded-full lg:rounded-lg hover:z-50">
           <div
-            className={`${styles.figure} sm:rounded-full rounded-full lg:rounded-lg overflow-hidden`}
+            className={`${styles.figure} sm:rounded-full rounded-full lg:rounded-lg overflow-hidden hover:z-50`}
           >
             <Image
-              className="w-full z-10 rounded-lg lg:rounded-lg"
-              src="/assets/images/profile.png"
+              className="w-full rounded-lg lg:rounded-lg hover:z-50"
+              src="/assets/images/profile3.png"
               alt="Profile picture"
               style={{
                 objectFit: 'fill',
                 objectPosition: 'center',
                 // transform: 'scaleX(-1)',
-                filter: 'brightness(1)',
+                filter: 'brightness(1) grayscale(100%)',
               }}
               width={500}
               height={500}
@@ -90,7 +100,7 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
               className={`${styles.gradientmask1} w-[50%] h-[60%] left-[50%] bottom-[75%] rotate-180 `}
             ></div> */}
             <div
-              className={`${styles.gradientmask1} w-[50%] h-[100%] left-[45%] bottom-[15%] `}
+              className={`${styles.gradientmask1} w-[50%] h-[90%] left-[45%] bottom-[15%] py-10 rounded-3xl`}
             ></div>
             {/* <div
               className={`${styles.gradientmask2} w-[35%] h-[50%] left-[20%] bottom-[10%] `}
@@ -106,15 +116,20 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
         </div>
       </div>
       <div className="lg:w-3/4 text-start px-5 lg:py-4 lg:my-auto">
-        <h1 className="text-gray-200 lg:text-2xl md:text-xl sm:text-lg text-lg font-medium pt-1">
+        <h1
+          className={`${vcrOsdMono.className} text-gray-200 tracking-widest lg:text-2xl md:text-xl sm:text-lg text-lg font-medium pt-1 uppercase hover:text-[#f29]`}
+        >
           <span>{`Hi, I'm ${profile.name}.`}</span>
         </h1>
-        <h1 className="text-gray-200 lg:text-4xl md:text-3xl sm:text-2xl text-2xl font-bold py-3">
+        <h1
+          className={`${lora.className} text-gray-200 lg:text-4xl md:text-3xl sm:text-2xl text-2xl font-bold py-3`}
+        >
           {`ChatGPT, please write my ${profile.title} description`}
           <span
             className={`${isTypingStyle ? styles.typewriter : ''} ${
               vt323.className
-            } tracking-wider font-medium font-mono ml-2 mt-2`}
+            } cursor-help tracking-wider font-medium font-mono ml-2 mt-2 hover:text-[#f29]`}
+            onClick={search}
             style={{ '--n': completion?.style?.length } as React.CSSProperties}
             onAnimationEnd={StyleAnimEnded}
           >{`${isLoading ? '' : ` ${completion?.style}`}: `}</span>
@@ -171,7 +186,7 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
           <button
             type="button"
             hidden={isTypingDescription || isTypingStyle}
-            className={`${vcrOsdMono.className} font-mono tracking-widest text-xl border-gray-200 border-2  hover:border-[#f29] w-2/4 h-16 text-white font-medium px-2 rounded`}
+            className={`${vcrOsdMono.className} font-mono tracking-widest lg:text-xl md:text-xl sm:text-xl text-md border-gray-200 border-2 hover:border-[#f29] hover:z-50 w-2/4 h-16 text-white font-medium px-2 rounded`}
             onClick={generateNewDescription}
           >
             <span className="mb-2 py-2">Generate a new description</span>

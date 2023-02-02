@@ -76,7 +76,6 @@
   mix-blend-mode: multiply;
   position: absolute;
   opacity: 0.9;
-  border-radius: 10%;
   pointer-events: none;
 }
 .gradientmask2 {

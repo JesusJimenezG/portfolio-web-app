@@ -1,7 +1,8 @@
 // import './globals.css'
 import { Navigation } from './lib/shared/NavBar'
 import './styles/output.css'
-import { SocialMedia } from './lib/shared/components/SocialMedia'
+import { SocialMedia } from './lib/shared/components/about/SocialMedia'
+import { AnalyticsWrapper } from './lib/shared/components/analytics/Analytics'
 
 export default function RootLayout({
   children,
@@ -23,6 +24,7 @@ export default function RootLayout({
           className={'tracking-wider min-h-screen justify-center items-center'}
         >
           {children}
+          <AnalyticsWrapper />
         </main>
         <footer className="flex border-t py-4 border-[#eaeaea] justify-center">
           <SocialMedia />

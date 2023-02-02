@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { lora, vcrOsdMono } from '../styles/fonts'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -50,14 +51,19 @@ export default function ContactSection() {
   }
 
   return (
-    <div className="flex w-4/12 h-screen m-auto justify-center items-center">
+    <div className="flex lg:w-4/12 w-2/4 h-screen m-auto justify-center items-center">
       <div className="cotainer h-auto w-full my-auto">
-        <h2 className="text-3xl font-medium text-center text-white mb-8">
+        <h2
+          className={`${vcrOsdMono.className} uppercase tracking-widest text-3xl font-medium text-center text-white mb-8 hover:text-[#f29]`}
+        >
           Contact Me
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
-            <label htmlFor="name" className="block font-medium text-white mb-2">
+            <label
+              htmlFor="name"
+              className={`${lora.className} text-lg block font-medium text-white mb-2`}
+            >
               Name
             </label>
             <input
@@ -72,7 +78,7 @@ export default function ContactSection() {
           <div className="mb-6">
             <label
               htmlFor="email"
-              className="block font-medium text-white mb-2"
+              className={`${lora.className} text-lg block font-medium text-white mb-2`}
             >
               Email
             </label>
@@ -86,7 +92,10 @@ export default function ContactSection() {
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="name" className="block font-medium text-white mb-2">
+            <label
+              htmlFor="name"
+              className={`${lora.className} text-lg block font-medium text-white mb-2`}
+            >
               Subject
             </label>
             <input
@@ -101,7 +110,7 @@ export default function ContactSection() {
           <div className="mb-6">
             <label
               htmlFor="message"
-              className="block font-medium text-white mb-2"
+              className={`${lora.className} text-lg block font-medium text-white mb-2`}
             >
               Message
             </label>
@@ -116,7 +125,9 @@ export default function ContactSection() {
           </div>
           <button
             type="submit"
-            className={`w-24 border-2  ${
+            className={`${
+              vcrOsdMono.className
+            } uppercase tracking-widest text-lg w-32 border-2  ${
               sending
                 ? 'border-gray-600/50'
                 : 'hover:border-[#f29] border-white'
