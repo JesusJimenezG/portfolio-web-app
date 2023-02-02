@@ -1053,12 +1053,12 @@ video {
   text-align: start;
 }
 
-.font-mono {
-  font-family: var(--font-vcr-osd-mono), var(--font-vt323), var(--font-ds-digital), var(--font-hack-bold), var(--font-hack-regular), var(--font-linebeam);
-}
-
 .font-\[consolas\] {
   font-family: consolas;
+}
+
+.font-mono {
+  font-family: var(--font-vcr-osd-mono), var(--font-vt323), var(--font-ds-digital), var(--font-hack-bold), var(--font-hack-regular), var(--font-linebeam);
 }
 
 .font-\[\] {
@@ -1101,6 +1101,10 @@ video {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .font-semibold {

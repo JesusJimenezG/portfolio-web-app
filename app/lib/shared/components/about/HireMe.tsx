@@ -1,12 +1,6 @@
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import {
-  lora,
-  mukta,
-  playfairDisplay,
-  raleway,
-  vcrOsdMono,
-} from '../../../../styles/fonts'
+import { vcrOsdMono } from '../../../../styles/fonts'
 
 const links = {
   upwork: 'https://www.upwork.com/freelancers/~0136891f6e1d316648',
@@ -22,7 +16,9 @@ export default function HireMe() {
   return (
     <section className="py-10">
       <div className="container mx-auto text-center">
-        <h1 className={`${raleway.className} text-xl font-medium mb-4`}>
+        <h1
+          className={`${vcrOsdMono.className} uppercase text-xl font-medium mb-4`}
+        >
           Get in Touch
         </h1>
         <div className="flex flex-col sm:flex-row sm:justify-center">

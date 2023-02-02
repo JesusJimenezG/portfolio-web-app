@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { OpenAIDataType, ProfileDataType } from '../../lib/types'
 import styles from '../styles/hero.module.css'
-import { hackRegular, lora, vcrOsdMono, vt323 } from '../../styles/fonts'
+import { lora, vcrOsdMono, vt323 } from '../../styles/fonts'
 import useSWR from 'swr'
 import HireMe from '../../lib/shared/components/about/HireMe'
 import QRCode from 'react-qr-code'
@@ -55,7 +55,7 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
     // setIsTypingDescription(true)
   }
 
-  const StyleAnimEnded = () => {
+  const styleAnimEnd = () => {
     setIsTypingStyle(false)
     setIsTypingDescription(true)
   }
@@ -126,13 +126,13 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
         >
           {`ChatGPT, please write my ${profile.title} description`}
           <span
-            className={`${isTypingStyle ? styles.typewriter : ''} ${
-              vt323.className
-            } cursor-help tracking-wider font-medium font-mono ml-2 mt-2 hover:text-[#f29]`}
+            className={`${vt323.className} ${
+              isTypingStyle ? styles.typewriter : ''
+            } font-normal cursor-help tracking-wider ml-2 mt-2 hover:text-[#f29]`}
             onClick={search}
             style={{ '--n': completion?.style?.length } as React.CSSProperties}
-            onAnimationEnd={StyleAnimEnded}
-          >{`${isLoading ? '' : ` ${completion?.style}`}: `}</span>
+            onAnimationEnd={styleAnimEnd}
+          >{`${isLoading ? '' : ` ${completion?.style}`}:`}</span>
         </h1>
         <section title="header description">
           {completion?.style.includes('QR') ? (

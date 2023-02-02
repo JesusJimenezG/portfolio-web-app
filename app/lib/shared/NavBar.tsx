@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Stripes } from '../../home/components/Home'
-import { dsDigital, linebeam, vcrOsdMono, vt323 } from '../../styles/fonts'
+import { dsDigital, vcrOsdMono } from '../../styles/fonts'
 
 const routes = [
   { text: 'Home', href: '/' },
@@ -55,7 +55,7 @@ export const Navigation = () => {
         </div>
       </div>
       <div
-        className={`${vcrOsdMono.className} font-mono text-xl font-medium hidden sm:flex`}
+        className={`${vcrOsdMono.className} text-xl font-medium hidden sm:flex`}
       >
         {routes.map((link, index) => (
           <Link
