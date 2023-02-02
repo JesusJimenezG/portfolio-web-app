@@ -30,15 +30,16 @@ export default async function handler(
   // })
   // res.status(200).json({ result: completion.data })
   // console.log('called api')
-  const randomNumber = await (
-    await fetch(
-      `https://us-central1-jesusjimenezg-web-app.cloudfunctions.net/randomNumber?max=${openAIDescriptions.length}`
-    )
-  ).json()
-  if (!randomNumber) {
-    res.status(500).json({ error: 'Error getting random number' })
-  }
-  console.log(randomNumber)
+  // const randomNumber = await (
+  //   await fetch(
+  //     `https://us-central1-jesusjimenezg-web-app.cloudfunctions.net/randomNumber?max=${openAIDescriptions.length}`
+  //   )
+  // ).json()
+  // if (!randomNumber) {
+  //   res.status(500).json({ error: 'Error getting random number' })
+  // }
+  // console.log(randomNumber)
+  const randomNumber = Math.round(Math.random() * openAIDescriptions.length)
   const style = openAIDescriptions[randomNumber]
   res.status(200).json({ results: style })
 }
