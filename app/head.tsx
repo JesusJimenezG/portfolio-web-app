@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Jesus Jimenez Dev🔧</title>
+      <title>Jesus Jimenez Dev</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="Jesus Jimenez Web App"

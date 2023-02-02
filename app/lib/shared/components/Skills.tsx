@@ -6,7 +6,7 @@ export const Skills = ({ skills }: { skills: SkillsDataType }) => {
     <section title="skills">
       <div className="grid gap-6 justify-start mx-auto">
         <div>
-          <h2 className="text-2xl font-medium text-start">Languages</h2>
+          <h2 className="text-2xl font-medium text-start">🌐Languages</h2>
           <ul className="mt-10 flex flex-wrap justify-start">
             {skills.languages.map(({ language, level }, index) => (
               <li
@@ -20,7 +20,7 @@ export const Skills = ({ skills }: { skills: SkillsDataType }) => {
         </div>
         <div>
           <h2 className="text-2xl font-medium text-start">
-            Programming Languages
+            💻Programming Languages
           </h2>
           <ul className="mt-10 flex flex-wrap justify-start">
             {skills.programmingLanguages.map((language: string, index: Key) => (
@@ -35,7 +35,7 @@ export const Skills = ({ skills }: { skills: SkillsDataType }) => {
         </div>
         <div>
           <h2 className="text-2xl font-medium text-start">
-            Professional Skills
+            🥇Professional Skills
           </h2>
           <ul className="mt-10 flex flex-wrap justify-start">
             {skills.professionalSkills.map((skill: string, index: Key) => (
@@ -50,7 +50,7 @@ export const Skills = ({ skills }: { skills: SkillsDataType }) => {
         </div>
         <div>
           <h2 className="text-2xl font-medium text-start">
-            Non-Professional Skills
+            🎯Non-Professional Skills
           </h2>
           <ul className="mt-10 flex flex-wrap justify-start">
             {skills.nonProfessionalSkills.map((skill: string, index: Key) => (
