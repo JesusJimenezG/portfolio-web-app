@@ -2,7 +2,7 @@ export default function HireMe() {
   const links = {
     upwork: 'https://www.upwork.com/freelancers/~0136891f6e1d316648',
     linkedin: 'https://www.linkedin.com/in/jesusjimenezg/',
-    email: 'mailto:jesusalfonsojg7@gmail.com',
+    discord: 'Al#5231',
   }
   return (
     <section className="py-10">
@@ -22,10 +22,11 @@ export default function HireMe() {
             Upwork
           </a>
           <a
-            href={links['email']}
+            href={links['discord']}
             className="border-gray-200 border-2 hover:border-[#f29] hover:z-10 w-full sm:w-48 sm:mx-4 px-6 py-4 rounded-lg text-white mb-4 sm:mb-0"
           >
-            Email
+            {'Discord:'}
+            <span className="text-gray-300">{links['discord']}</span>
           </a>
         </div>
       </div>
