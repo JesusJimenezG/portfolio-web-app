@@ -9,7 +9,6 @@ module.exports = {
     extend: {
       fontFamily: {
         mono: [
-          'var(--font-anodyne)',
           'var(--font-major-mono-display)',
           'var(--font-nova-mono-display)',
           'var(--font-vt323)',
@@ -17,10 +16,17 @@ module.exports = {
           'var(--font-zekton)',
           'var(--font-hack-bold)',
           'var(--font-hack-regular)',
-          'var(--font-monoid-bold)',
-          'var(--font-monoid-regular)',
           'var(--font-vcr-osd-mono)',
+          'ui-monospace',
+          'SFMono-Regular',
+          'Consolas',
+          'Liberation Mono',
+          'monospace',
         ],
+      },
+      backgroundImage: {
+        profile: "url('/assets/images/profile.png')",
+        profile2: "url('/assets/images/profile2.png')",
       },
     },
     screens: {

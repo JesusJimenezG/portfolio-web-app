@@ -30,16 +30,6 @@ export const firaMono = Fira_Mono({
   variable: '--font-fira-mono',
 })
 
-export const anodyne = localFont({
-  src: './fonts/Anodyne.ttf',
-  variable: '--font-anodyne',
-})
-
-export const zekton = localFont({
-  src: './fonts/zekton.otf',
-  variable: '--font-zekton',
-})
-
 export const hackBold = localFont({
   src: './fonts/Hack-Bold.ttf',
   variable: '--font-hack-bold',
@@ -48,16 +38,6 @@ export const hackBold = localFont({
 export const hackRegular = localFont({
   src: './fonts/Hack-Regular.ttf',
   variable: '--font-hack-regular',
-})
-
-export const monoidBold = localFont({
-  src: './fonts/Monoid-Bold.ttf',
-  variable: '--font-monoid-bold',
-})
-
-export const monoidRegular = localFont({
-  src: './fonts/Monoid-Regular.ttf',
-  variable: '--font-monoid-regular',
 })
 
 export const vcrOsdMono = localFont({

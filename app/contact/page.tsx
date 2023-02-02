@@ -1,8 +1,9 @@
 'use client'
 import { useState } from 'react'
+import useSWR from 'swr'
+
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import useSWR from 'swr'
 
 const fetcher = (formData: string) =>
   fetch('/api/contact', {
@@ -30,14 +31,10 @@ export default function ContactSection() {
   const handleSubmit = (e: any) => {
     e.preventDefault()
     // send email here
-    const res = useSWR(formData, fetcher)
-    console.log('Response received')
-    console.log('Response succeeded!')
-    toast('Message sent. Thanks for getting in touch!', {
-      hideProgressBar: true,
-      autoClose: 2000,
-      type: 'success',
-    })
+    // const res = useSWR(formData, fetcher)
+    // console.log('Response received')
+    // console.log('Response succeeded!')
+    toast('Message sent. Thanks for getting in touch!')
     setFormData({
       name: '',
       email: '',
@@ -46,8 +43,8 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="w-4/12">
-      <div className="container">
+    <div className="flex w-4/12 h-screen m-auto justify-center items-center">
+      <div className="cotainer h-auto w-full my-auto">
         <h2 className="text-3xl font-medium text-center text-white mb-8">
           Contact Me
         </h2>
@@ -103,9 +100,21 @@ export default function ContactSection() {
           >
             Send
           </button>
+          <ToastContainer
+            position="bottom-center"
+            autoClose={5000}
+            hideProgressBar={true}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </form>
       </div>
-    </section>
+    </div>
   )
 }
 //   const [formData, setFormData] = useState({

@@ -1,13 +1,13 @@
 import { Key } from 'react'
-import { SkillsDataType } from '../../../types'
+import { SkillsDataType } from '../../types'
 
 export const Skills = ({ skills }: { skills: SkillsDataType }) => {
   return (
-    <section title="skills" className="my-4">
-      <div className="grid grid-cols-2 gap-6 justify-start mx-auto">
+    <section title="skills">
+      <div className="grid gap-6 justify-start mx-auto">
         <div>
-          <h2 className="text-2xl font-medium text-center">Languages</h2>
-          <ul className="mt-4 flex flex-wrap justify-center">
+          <h2 className="text-2xl font-medium text-start">Languages</h2>
+          <ul className="mt-10 flex flex-wrap justify-start">
             {skills.languages.map(({ language, level }, index) => (
               <li
                 key={index}
@@ -19,10 +19,10 @@ export const Skills = ({ skills }: { skills: SkillsDataType }) => {
           </ul>
         </div>
         <div>
-          <h2 className="text-2xl font-medium text-center">
+          <h2 className="text-2xl font-medium text-start">
             Programming Languages
           </h2>
-          <ul className="mt-4 flex flex-wrap justify-center">
+          <ul className="mt-10 flex flex-wrap justify-start">
             {skills.programmingLanguages.map((language: string, index: Key) => (
               <li
                 key={index}
@@ -34,10 +34,10 @@ export const Skills = ({ skills }: { skills: SkillsDataType }) => {
           </ul>
         </div>
         <div>
-          <h2 className="text-2xl font-medium text-center">
+          <h2 className="text-2xl font-medium text-start">
             Professional Skills
           </h2>
-          <ul className="mt-4 flex flex-wrap justify-center">
+          <ul className="mt-10 flex flex-wrap justify-start">
             {skills.professionalSkills.map((skill: string, index: Key) => (
               <li
                 key={index}
@@ -49,10 +49,10 @@ export const Skills = ({ skills }: { skills: SkillsDataType }) => {
           </ul>
         </div>
         <div>
-          <h2 className="text-2xl font-medium text-center">
+          <h2 className="text-2xl font-medium text-start">
             Non-Professional Skills
           </h2>
-          <ul className="mt-4 flex flex-wrap justify-center">
+          <ul className="mt-10 flex flex-wrap justify-start">
             {skills.nonProfessionalSkills.map((skill: string, index: Key) => (
               <li
                 key={index}

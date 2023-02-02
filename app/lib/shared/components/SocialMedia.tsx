@@ -1,5 +1,4 @@
-import { vcrOsdMono } from '../../styles/fonts'
-import { Stripes } from '../home/Home'
+import { vcrOsdMono } from '../../../styles/fonts'
 
 export const SocialMedia = () => {
   const links = {

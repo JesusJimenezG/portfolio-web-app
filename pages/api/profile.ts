@@ -1,6 +1,6 @@
-import profilejson from '../../app/data/profile.json'
+import profilejson from '../../app/lib/data/profile.json'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { ProfileDataType } from '../../types'
+import { ProfileDataType } from '../../app/lib/types'
 
 export const profile = profilejson as ProfileDataType
 

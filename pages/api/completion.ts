@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import openaijson from '../../app/data/completionDescription.json'
-import { OpenAIDataType } from '../../types'
+import openaijson from '../../app/lib/data/completionDescription.json'
+import { OpenAIDataType } from '../../app/lib/types'
 // import { Configuration, OpenAIApi } from 'openai'
 
 // const configuration = new Configuration({
@@ -29,13 +29,16 @@ export default async function handler(
   //   max_tokens: 1024,
   // })
   // res.status(200).json({ result: completion.data })
-
-  const randomNumber = await fetch(
-    `https://us-central1-jesusjimenezg-web-app.cloudfunctions.net/randomNumber?max=${openAIDescriptions.length}`
-  )
-  if (!randomNumber.ok) {
+  // console.log('called api')
+  const randomNumber = await (
+    await fetch(
+      `https://us-central1-jesusjimenezg-web-app.cloudfunctions.net/randomNumber?max=${openAIDescriptions.length}`
+    )
+  ).json()
+  if (!randomNumber) {
     res.status(500).json({ error: 'Error getting random number' })
   }
-  const style = openAIDescriptions[await randomNumber.json()]
+  console.log(randomNumber)
+  const style = openAIDescriptions[randomNumber]
   res.status(200).json({ results: style })
 }

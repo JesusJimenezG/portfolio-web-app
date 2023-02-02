@@ -71,14 +71,30 @@
   margin-top: 5px;
 }
 
-.gradientmask {
-  /* width: 50%; */
-  /* height: 100%; */
+.gradientmask1 {
   background: linear-gradient(to bottom, #92f 0%, #f29 100%);
   mix-blend-mode: multiply;
   position: absolute;
-  /* left: 45%; */
-  /* bottom: 18%; */
+  opacity: 0.9;
+  border-radius: 10%;
+  pointer-events: none;
+}
+.gradientmask2 {
+  background: linear-gradient(
+    to bottom,
+    rgb(34, 38, 255) 0%,
+    rgb(251, 38, 38) 100%
+  );
+  mix-blend-mode: multiply;
+  position: absolute;
+  opacity: 0.9;
+  border-radius: 10%;
+  pointer-events: none;
+}
+.gradientmask3 {
+  background: linear-gradient(to bottom, #92f 0%, #f29 100%);
+  mix-blend-mode: multiply;
+  position: absolute;
   opacity: 0.9;
   border-radius: 10%;
   pointer-events: none;

@@ -1,13 +1,14 @@
 // import './globals.css'
-import { Navigation } from './shared/NavBar'
+import { Navigation } from './lib/shared/NavBar'
 import './styles/output.css'
-import { SocialMedia } from './components/contact/SocialMedia'
+import { SocialMedia } from './lib/shared/components/SocialMedia'
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  // const parent = document.getElementById('root')
   return (
     <html lang="en">
       <head>

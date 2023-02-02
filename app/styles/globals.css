@@ -24,6 +24,12 @@ a {
 body {
   font-size: 16px; /* Set a default font size */
   line-height: 1.5; /* Set a default line height */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 @media (prefers-color-scheme: dark) {
