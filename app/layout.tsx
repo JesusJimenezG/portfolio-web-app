@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${vcrOsdMono.variable} ${dsDigital.variable} ${vt323.variable} ${lora.style} ${raleway.variable}`}
+      className={`${vcrOsdMono.variable} ${dsDigital.variable} ${vt323.variable} ${lora.style} ${raleway.variable}}`}
     >
       <head>
         <script

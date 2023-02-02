@@ -26,7 +26,7 @@ export const Navigation = () => {
       <div className="flex items-center">
         {/* <img src="/" alt="alt" className="w-12 h-12" /> */}
         <h1
-          className={`${dsDigital.className} uppercase text-start lg:w-full md:w-full sm:w-full w-4/6 py-1 px-5 font-mono tracking-widest text-white lg:text-2xl text-xl z-50`}
+          className={`${dsDigital.className} font-[] uppercase text-start lg:w-full md:w-full sm:w-full w-4/6 py-1 px-5 tracking-widest text-white lg:text-2xl text-xl z-50`}
         >
           <Link
             href="/"
