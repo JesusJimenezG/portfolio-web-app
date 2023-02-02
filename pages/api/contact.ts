@@ -1,3 +1,4 @@
+import { info } from 'console'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = any
@@ -7,7 +8,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { name, email, subject, message } = JSON.parse(req.body)
+  const { name, email, subject, message } = req.body
 
   const mailData = {
     to: process.env.EMAIL_TO,
@@ -27,20 +28,34 @@ export default async function handler(
       pass: process.env.WEB_MAILER_PASSWORD,
     },
   })
+  console.log('catch')
 
-  await new Promise((resolve, reject) => {
-    // send mail
-    transporter.sendMail(mailData, (info: any, err: any) => {
-      if (err) {
-        console.log('err: ', err)
-        reject(err)
-        // res.status(500).json({ error: 'Error sending email' })
+  const server = await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error: any, success: any) {
+      if (success) {
+        resolve(success)
       }
-      if (info.response.includes('250')) {
-        resolve(info)
-        // res.status(200).json({ success: true })
-      }
+      reject(error)
     })
   })
-  res.status(200).json({ success: true })
+  console.log('server: ', server)
+  if (!server) {
+    res.status(500).json({ error: 'Error failed' })
+  }
+
+  const success = await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData).then((info: any, err: any) => {
+      if (info.response.includes('250')) {
+        resolve(true)
+      }
+      reject(err)
+    })
+  })
+
+  if (!success) {
+    res.status(500).json({ error: 'Error sending email' })
+  }
+  res.status(200).json({ success: success })
 }

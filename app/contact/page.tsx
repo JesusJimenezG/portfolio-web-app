@@ -34,14 +34,16 @@ export default function ContactSection() {
     ).json()
     if (success) {
       toast('Message sent. Thanks for getting in touch!')
-      setSending(false)
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: '',
       })
+    } else {
+      toast('An error occurred! Please try again.')
     }
+    setSending(false)
   }
 
   const handleSubmit = (e: any) => {
