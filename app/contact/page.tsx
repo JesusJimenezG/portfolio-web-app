@@ -1,45 +1,52 @@
 'use client'
 import { useState } from 'react'
-import useSWR from 'swr'
 
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
-const fetcher = (formData: string) =>
-  fetch('/api/contact', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-  }).then((res) => res.json())
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   })
+  const [sending, setSending] = useState(false)
 
-  const { name, email, message } = formData
+  const { name, email, subject, message } = formData
 
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  const sendEmail = async () => {
+    let json = JSON.stringify(formData)
+    const { success } = await (
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+        body: json,
+      })
+    ).json()
+    if (success) {
+      toast('Message sent. Thanks for getting in touch!')
+      setSending(false)
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      })
+    }
+  }
+
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    // send email here
-    // const res = useSWR(formData, fetcher)
-    // console.log('Response received')
-    // console.log('Response succeeded!')
-    toast('Message sent. Thanks for getting in touch!')
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    })
+    setSending(true)
+    sendEmail()
   }
 
   return (
@@ -79,6 +86,19 @@ export default function ContactSection() {
             />
           </div>
           <div className="mb-6">
+            <label htmlFor="name" className="block font-medium text-white mb-2">
+              Subject
+            </label>
+            <input
+              type="text"
+              name="subject"
+              value={subject}
+              onChange={handleChange}
+              className="border bg-black text-white p-2 w-full"
+              required
+            />
+          </div>
+          <div className="mb-6">
             <label
               htmlFor="message"
               className="block font-medium text-white mb-2"
@@ -96,10 +116,19 @@ export default function ContactSection() {
           </div>
           <button
             type="submit"
-            className="bg-indigo-500 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded"
+            className={`w-24 border-2  ${
+              sending
+                ? 'border-gray-600/50'
+                : 'hover:border-[#f29] border-white'
+            } text-white font-medium py-2 px-4 rounded`}
+            disabled={sending}
           >
             Send
           </button>
+          <span className={`ml-5 ${sending ? 'block' : 'hidden'}`}>
+            Sending...
+          </span>
+
           <ToastContainer
             position="bottom-center"
             autoClose={5000}
@@ -117,91 +146,3 @@ export default function ContactSection() {
     </div>
   )
 }
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     message: '',
-//   })
-//   const [submitted, setSubmitted] = useState(false)
-
-//   const handleChange = (event: any) => {
-//     setFormData({
-//       ...formData,
-//       [event.target.name]: event.target.value,
-//     })
-//   }
-
-//   const handleSubmit = (event: any) => {
-//     event.preventDefault()
-//     console.log(formData)
-//     // Send formData to email here
-
-//   }
-
-//   return (
-//     <section className="py-12">
-//       <div className="container mx-auto">
-//         <h2 className="text-3xl font-medium text-center text-white mb-6">
-//           Get in Touch
-//         </h2>
-//         <form
-//           onSubmit={handleSubmit}
-//           className="shadow-md rounded px-8 pt-6 pb-8 mb-4"
-//         >
-//           <div className="mb-4">
-//             <label className="block text-white font-medium mb-2" htmlFor="name">
-//               Name
-//             </label>
-//             <input
-//               className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-//               id="name"
-//               type="text"
-//               placeholder="John Doe"
-//               onChange={handleChange}
-//               value={formData.name}
-//             />
-//           </div>
-//           <div className="mb-4">
-//             <label
-//               className="block text-white font-medium mb-2"
-//               htmlFor="email"
-//             >
-//               Email
-//             </label>
-//             <input
-//               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-//               id="email"
-//               type="email"
-//               placeholder="john.doe@example.com"
-//               onChange={handleChange}
-//               value={formData.email}
-//             />
-//           </div>
-//           <div className="mb-4">
-//             <label
-//               className="block text-white font-medium mb-2"
-//               htmlFor="message"
-//             >
-//               Message
-//             </label>
-//             <textarea
-//               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
-//               id="message"
-//               placeholder="Write your message here..."
-//               onChange={handleChange}
-//               value={formData.message}
-//             />
-//           </div>
-//           <div className="flex items-center justify-center">
-//             <button
-//               className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-//               type="submit"
-//             >
-//               Send
-//             </button>
-//           </div>
-//         </form>
-//       </div>
-//     </section>
-//   )
-// }
