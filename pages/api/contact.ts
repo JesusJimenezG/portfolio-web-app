@@ -35,7 +35,6 @@ export default async function handler(
     port: 465,
     auth: auth,
   })
-  console.log('catch')
 
   const server = await new Promise((resolve, reject) => {
     // verify connection configuration
@@ -46,7 +45,6 @@ export default async function handler(
       reject(error)
     })
   })
-  console.log('server: ', server)
   if (!server) {
     res.status(500).json({ error: 'Error failed' })
   }
