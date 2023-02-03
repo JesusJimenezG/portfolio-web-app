@@ -38,6 +38,13 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
   useEffect(() => {
     if (isTypingDescription) {
       setDescription(completion!.text)
+      if (
+        completion!.style.toLowerCase().includes('gif') ||
+        completion!.style.toLowerCase().includes('png') ||
+        completion!.style.toLowerCase().includes('qr')
+      ) {
+        setIsTypingDescription(false)
+      }
     }
   }, [isTypingDescription])
 
@@ -127,7 +134,7 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
           {`ChatGPT, please write my ${profile.title} description`}
           <span
             className={`${vt323.className} ${
-              isTypingStyle ? styles.typewriter : ''
+              isTypingStyle ? `${styles.typewriter} pointer-events-none` : ''
             } font-normal cursor-help tracking-wider ml-2 mt-2 hover:text-[#f29]`}
             onClick={search}
             style={{ '--n': completion?.style?.length } as React.CSSProperties}
@@ -138,22 +145,34 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
           {completion?.style.includes('QR') ? (
             <>
               <div
-                className="w-2/4 flex mx-auto my-2"
-                style={{ background: 'white', padding: '16px' }}
+                className={`${
+                  isTypingStyle ? 'hidden' : 'container'
+                } w-2/4 mx-auto my-2`}
               >
-                <QRCode
-                  size={32}
-                  style={{ height: 'auto', width: '100%' }}
-                  value={description}
-                />
+                <div
+                  className="w-full"
+                  style={{ background: 'white', padding: '16px' }}
+                >
+                  <QRCode
+                    size={32}
+                    style={{ height: 'auto', width: '100%' }}
+                    value={description}
+                  />
+                </div>
+                <div className="text-center">{`There's a 1/902 chance to see this style.😉`}</div>
               </div>
             </>
           ) : completion?.style.includes('PNG') ||
             completion?.style.includes('GIF') ? (
             <>
-              <div className="lg:w-2/4 w-[28px] mx-auto my-2">
+              <div
+                className={`${
+                  isTypingStyle ? 'hidden' : 'container'
+                } lg:w-2/4 w-[28px] mx-auto my-2 justify-center items-center`}
+              >
                 <Image
                   src={description}
+                  className="w-full"
                   alt="Image"
                   width={300}
                   height={300}
@@ -163,13 +182,14 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
                     // transform: 'scaleX(-1)',
                   }}
                 />
+                <div className="text-center">{`There's a 1/902 chance to see this style.😉`}</div>
               </div>
             </>
           ) : (
             <>
               <span
                 className={`${
-                  isTypingDescription ? styles.typewriter : ''
+                  isTypingDescription ? `${styles.typewriter} select-none` : ''
                 } font-[consolas] tracking-widest lg:text-lg md:text-lg sm:text-lg text-base`}
                 onAnimationEnd={descriptionAnimEnded}
                 style={{ '--n': description?.length } as React.CSSProperties}

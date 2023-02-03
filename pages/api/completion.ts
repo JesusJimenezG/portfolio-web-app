@@ -39,6 +39,10 @@ export default async function handler(
   //   res.status(500).json({ error: 'Error getting random number' })
   // }
   // console.log(randomNumber)
+  // console.log(openAIDescriptions.length)
+  // const style = openAIDescriptions.find((item) =>
+  // item.style.toLowerCase().includes('png')
+  // )
   const randomNumber = Math.round(Math.random() * openAIDescriptions.length)
   const style = openAIDescriptions[randomNumber]
   res.status(200).json({ results: style })
