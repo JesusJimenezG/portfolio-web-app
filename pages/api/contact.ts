@@ -1,8 +1,8 @@
 import { info } from 'console'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const dotenv = require('dotenv')
-dotenv.config()
+// const dotenv = require('dotenv')
+// dotenv.config()
 
 type Data = any
 const nodemailer = require('nodemailer')
@@ -26,6 +26,8 @@ export default async function handler(
     text: `Email: ${email}.\n\nMessage: ${message}`,
     html: `<div>Email: ${email}.\n\nMessage: ${message}</div>`,
   }
+
+  console.log('mailData: ', mailData)
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.titan.email',
