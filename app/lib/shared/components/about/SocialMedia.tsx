@@ -1,11 +1,30 @@
+'use client'
 import { vcrOsdMono } from '../../../../styles/fonts'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import React from 'react'
+
+const links = [
+  { text: 'Twitter', href: 'https://twitter.com/Jesalfz' },
+  { text: 'LinkedIn', href: 'https://www.linkedin.com/in/jesusjimenezg/' },
+  { text: 'GitHub', href: 'https://github.com/JesusJimenezG' },
+  { text: 'YouTube', href: 'https://www.youtube.com/@jesalfz' },
+  { text: 'Discord', href: 'Al#5231' },
+]
 
 export const SocialMedia = () => {
-  const links = {
-    twitter: 'https://twitter.com/Jesalfz',
-    linkedin: 'https://www.linkedin.com/in/jesusjimenezg/',
-    github: 'https://github.com/JesusJimenezG',
+  const isDiscord = (link: { text: string; href: string }) =>
+    link.text.toLowerCase().includes('discord')
+
+  const handleLink = (link: { text: string; href: string }) => {
+    if (isDiscord(link)) {
+      navigator.clipboard.writeText(link.href)
+      toast.success('Copied Discord username to clipboard!')
+    } else {
+      window.open(link.href, '_blank')
+    }
   }
+
   return (
     <section
       title="social media"
@@ -17,31 +36,29 @@ export const SocialMedia = () => {
         Follow me on
       </h2>
       <ul className="mt-4 flex">
-        <li key={'twitter'} className="mx-6">
-          <a href={links['twitter']} target="_blank">
-            <i
-              aria-hidden
-              className="fab fa-twitter fa-2x text-[#f29] hover:text-white"
-            ></i>
-          </a>
-        </li>
-        <li key={'linkedin'} className="mx-6">
-          <a href={links['linkedin']} target="_blank">
-            <i
-              aria-hidden
-              className="fab fa-linkedin fa-2x text-[#f29] hover:text-white"
-            ></i>
-          </a>
-        </li>
-        <li key={'github'} className="mx-6">
-          <a href={links['github']} target="_blank">
-            <i
-              aria-hidden
-              className="fab fa-github fa-2x text-[#f29] decoration-purple-200 hover:text-white shadow-purple-300"
-            ></i>
-          </a>
-        </li>
+        {links.map((link, index) => (
+          <li key={index} className="mx-6">
+            <a onClick={() => handleLink(link)}>
+              <i
+                aria-hidden
+                className={`fab fa-${link.text.toLowerCase()} fa-2x text-[#f29] hover:text-white cursor-pointer`}
+              ></i>
+            </a>
+          </li>
+        ))}
       </ul>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </section>
   )
 }

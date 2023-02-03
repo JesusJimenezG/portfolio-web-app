@@ -1,8 +1,4 @@
-import { info } from 'console'
 import type { NextApiRequest, NextApiResponse } from 'next'
-
-// const dotenv = require('dotenv')
-// dotenv.config()
 
 type Data = any
 const nodemailer = require('nodemailer')
