@@ -1,8 +1,16 @@
 import { info } from 'console'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+const dotenv = require('dotenv')
+dotenv.config()
+
 type Data = any
 const nodemailer = require('nodemailer')
+
+const auth = {
+  user: process.env.WEB_MAILER,
+  pass: process.env.WEB_MAILER_PASSWORD,
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -23,10 +31,7 @@ export default async function handler(
     host: 'smtp.titan.email',
     secure: true,
     port: 465,
-    auth: {
-      user: process.env.WEB_MAILER,
-      pass: process.env.WEB_MAILER_PASSWORD,
-    },
+    auth: auth,
   })
   console.log('catch')
 
