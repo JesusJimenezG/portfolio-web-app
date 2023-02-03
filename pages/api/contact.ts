@@ -27,8 +27,6 @@ export default async function handler(
     html: `<div>Email: ${email}.\n\nMessage: ${message}</div>`,
   }
 
-  console.log('mailData: ', mailData)
-
   const transporter = nodemailer.createTransport({
     host: 'smtp.titan.email',
     secure: true,
