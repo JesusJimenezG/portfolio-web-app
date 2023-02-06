@@ -34,7 +34,7 @@ export default function HireMe() {
           <a
             href={links['getonboard']}
             // onClick={copyToClipboard}
-            className={`${vcrOsdMono.className} uppercase tracking-widerborder-gray-200 border-2 hover:border-[#f29] hover:z-10 w-full sm:w-48 sm:mx-4 px-6 py-4 rounded-lg text-white mb-4 sm:mb-0 cursor-copy`}
+            className={`${vcrOsdMono.className} uppercase tracking-widerborder-gray-200 border-2 hover:border-[#f29] hover:z-10 w-full sm:w-48 sm:mx-4 px-6 py-4 rounded-lg text-white mb-4 sm:mb-0`}
           >
             {'Getonboard'}
           </a>

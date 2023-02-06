@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Stripes } from '../../home/components/Home'
 import { dsDigital, vcrOsdMono } from '../../styles/fonts'
@@ -13,11 +14,14 @@ const routes = [
 ]
 
 export const Navigation = () => {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleNav = () => {
     setIsOpen(!isOpen)
   }
+  const isHome = pathname === '/home'
+
   return (
     <nav className="flex items-center justify-between lg:px-40 md:px-20 px-5 py-2">
       <div className="mt-2 absolute left-1/2 -translate-x-1/2 hover:z-50">
@@ -61,7 +65,9 @@ export const Navigation = () => {
           <Link
             href={link.href}
             key={index}
-            className="ml-6 uppercase sm:ml-4  text-white hover:z-10"
+            className={`ml-6 uppercase sm:ml-4  text-white ${
+              isHome ? 'hover:z-10' : 'hover:text-[#f29]'
+            }`}
           >
             {link.text}
           </Link>

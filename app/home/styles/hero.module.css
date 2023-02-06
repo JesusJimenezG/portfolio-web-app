@@ -3,12 +3,12 @@
   overflow: hidden;
   background: linear-gradient(-90deg, #fafafa 5px, #0000 0) 5px 0,
     linear-gradient(#fafafa 0 0) 0 0;
-  background-size: calc(var(--n) * 1ch + 15%) 200%;
+  background-size: calc(var(--n) * 1ch) 200%;
   -webkit-background-clip: padding-box, text;
   background-clip: padding-box, text;
   background-repeat: no-repeat;
   animation: b 0.7s infinite steps(1),
-    t calc(var(--n) * 0.1s) steps(var(--n)) forwards;
+    t calc(var(--n) * 0.05s) steps(var(--n)) forwards;
 }
 
 @keyframes t {

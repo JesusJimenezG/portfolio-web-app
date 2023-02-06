@@ -27,7 +27,7 @@ export const SocialMedia = () => {
 
   return (
     <section
-      title="social media"
+      title="Social Media"
       className="m-auto text-center justify-center items-center"
     >
       <h2
@@ -38,10 +38,12 @@ export const SocialMedia = () => {
       <ul className="mt-4 flex">
         {links.map((link, index) => (
           <li key={index} className="mx-6">
-            <a onClick={() => handleLink(link)}>
+            <a onClick={() => handleLink(link)} title={link.text}>
               <i
                 aria-hidden
-                className={`fab fa-${link.text.toLowerCase()} fa-2x text-[#f29] hover:text-white cursor-pointer`}
+                className={`fab fa-${link.text.toLowerCase()} fa-2x text-[#f29] hover:text-white cursor-pointer ${
+                  isDiscord(link) ? 'cursor-copy' : ''
+                }`}
               ></i>
             </a>
           </li>
