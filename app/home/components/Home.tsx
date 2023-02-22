@@ -87,7 +87,7 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
           >
             <Image
               className="w-full rounded-lg lg:rounded-lg hover:z-50"
-              src="/assets/images/profile4.png"
+              src="/assets/images/profile3.png"
               alt="Profile picture"
               style={{
                 objectFit: 'fill',
