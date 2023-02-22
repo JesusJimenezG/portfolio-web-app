@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import openaijson from '../../app/lib/data/completionDescription.json'
-import { OpenAIDataType } from '../../app/lib/types'
+import { OpenAIDataType } from '../../app/lib/types/types'
 // import { Configuration, OpenAIApi } from 'openai'
 
 // const configuration = new Configuration({

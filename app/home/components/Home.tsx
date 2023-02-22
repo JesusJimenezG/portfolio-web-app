@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { OpenAIDataType, ProfileDataType } from '../../lib/types'
+import { OpenAIDataType, ProfileDataType } from '../../lib/types/types'
 import styles from '../styles/hero.module.css'
 import { lora, vcrOsdMono, vt323 } from '../../styles/fonts'
 import useSWR from 'swr'
@@ -29,6 +29,7 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
   const [description, setDescription] = useState('')
   const [isTypingStyle, setIsTypingStyle] = useState(true)
   const [isTypingDescription, setIsTypingDescription] = useState(false)
+  const [grayscale, setGrayscale] = useState('grayscale(100%)')
 
   useEffect(() => {
     if (data) {
@@ -86,14 +87,16 @@ export const Home = ({ profile }: { profile: ProfileDataType }) => {
           >
             <Image
               className="w-full rounded-lg lg:rounded-lg hover:z-50"
-              src="/assets/images/profile3.png"
+              src="/assets/images/profile4.png"
               alt="Profile picture"
               style={{
                 objectFit: 'fill',
                 objectPosition: 'center',
-                // transform: 'scaleX(-1)',
-                filter: 'brightness(1) grayscale(100%)',
+                transform: 'translate(-5px, 0px)',
+                filter: `brightness(1) ${grayscale}`,
               }}
+              onMouseOver={() => setGrayscale('grayscale(0)')}
+              onMouseOut={() => setGrayscale('grayscale(100%)')}
               width={500}
               height={500}
             />

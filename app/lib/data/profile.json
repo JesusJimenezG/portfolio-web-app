@@ -53,5 +53,102 @@
             "Nginx",
             "Flutter"
         ]
-    }
+    },
+    "projects": [
+        {
+            "title": "ZippyMeals",
+            "position": "Software developer | Full-stack web developer | Android Developer",
+            "description": "ZippyMeals is a web application that offers cloud solutions to the Meals On Wheels organizations in the United States and Canada. Worked as Full-stack web developer in multiple features for the website with Vue.js in the front-end and Django and PostgreSQL in the back-end. Also, I developed their Android application with Kotlin, MVVM, dagger, and Android Room for the SQL database management.",
+            "image": "/assets/images/zippymeals-front-screenshot.jpg",
+            "url": "https://www.zippymeals.com/",
+            "github": "Private",
+            "technologies": [
+                "Vanilla Javascript",
+                "Vue.js",
+                "jQuery",
+                "HTML",
+                "CSS",
+                "Python",
+                "Django",
+                "SQL",
+                "PostgreSQL",
+                "Bash scripting",
+                "Kotlin",
+                "Android Studio",
+                "Android Room",
+                "Dagger",
+                "MVVM"
+            ],
+            "contractor": "Upwork",
+            "contract_url": null,
+            "start_date": "2021-03-30",
+            "end_date": null,
+            "client_name": "John C.",
+            "feedback": "Jesus has completed several large development tasks for my company, with minimal supervision and minimal direction. He sticks with tasks until completion, is pleasant to work with, and has had the ability to learn every new technology I have thrown at him. Highly recommended.\n\nHe built two mobile apps from scratch for my company, helped me handle customer support, and fixed bugs on my web application. He asks pertinent questions when he needs to, and has willingly and enthusiastically learned how my particular system works. I communicate with him over Slack, which has worked really well, as he is responsive.\n\nI don't offer much in terms of guidance or direction, so his ability to be a self-starter and figure things out on his own has been fantastic.",
+            "stars": 5
+        },
+        {
+            "title": "Guidepost",
+            "position": "Full-stack web developer | Back-end web developer | Database architect",
+            "description": "Developed the MVP's first stage of the API and front-end for the Guidepost project, a web application that offers a platform for people to explore and take on new adventures. The API was developed with Django REST Framework and PostgreSQL as the RDBM. Next.js for the front-end and JWT for authentication.",
+            "image": "/assets/images/guidepost-front-screenshot.jpg",
+            "url": null,
+            "github": "Private",
+            "technologies": [
+                "Python",
+                "Django REST framework",
+                "PostgreSQL",
+                "Next.js",
+                "Redux",
+                "JWT authentication"
+            ],
+            "contractor": "Upwork",
+            "contract_url": null,
+            "start_date": "2022-12-11",
+            "end_date": null,
+            "client_name": null,
+            "feedback": null,
+            "stars": null
+        },
+        {
+            "title": "MusicAsCode",
+            "position": "Front-end web developer",
+            "description": "The goal was to implement a digital audio workstation-like interface using React, ToneJs, and TwoJs. I contributed to the project by building 2D figures with audio capabilities using an OOP javascript-oriented paradigm that implements features inside the classes and controllers for the libraries, also implementing the javascript features within React components.",
+            "image": "/assets/images/music-as-code.jpg",
+            "url": null,
+            "github": "Private",
+            "technologies": [
+                "React",
+                "Two.js",
+                "Tone.js"
+            ],
+            "contractor": "Upwork",
+            "contract_url": "https://www.upwork.com/freelancers/~0136891f6e1d316648?p=1590119853832118272",
+            "start_date": "2021-04-27",
+            "end_date": "2021-06-08",
+            "client_name": null,
+            "feedback": null,
+            "stars": 4.10
+        },
+        {
+            "title": "Stripe integration with Vue and Firebase",
+            "position": "Front-end web developer",
+            "description": "I contributed into this project by implementing dashboard view, stripe integration with firebase functions and subscription payments, handling subscriptions actions, setting credits on subscription taken, custom firestore database triggers, and handle of the main action taken with the credits.",
+            "image": "/assets/images/stripe-vue-firebase.jpg",
+            "url": null,
+            "github": "Private",
+            "technologies": [
+                "React",
+                "Two.js",
+                "Tone.js"
+            ],
+            "contractor": "Upwork",
+            "contract_url": "https://www.upwork.com/freelancers/~0136891f6e1d316648?p=1377494721311440896",
+            "start_date": "2021-02-15",
+            "end_date": "2021-03-30",
+            "client_name": null,
+            "feedback": null,
+            "stars": null
+        }
+    ]
 }
