@@ -17,16 +17,16 @@ export interface ProjectDataType {
   position: string
   description: string
   image: string
-  url: string
-  github: string
+  url: string | null
+  github: string | null
   technologies: Array<string>
-  client_name: string
+  client_name: string | null
   contractor: string
-  contract_url: string
+  contract_url: string | null
   start_date: string
-  end_date: string
-  feedback: string
-  stars: number
+  end_date: string | null
+  feedback: string | null
+  stars: number | null
 }
 export interface ProfileDataType {
   title: string

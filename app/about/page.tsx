@@ -43,12 +43,27 @@ export default function About() {
                 key={index}
               >
                 <div className="pb-4 w-full h-[500px]">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
+                  {project.image ? (
+                    <a
+                      href={project.url!}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={500}
+                        height={500}
+                        style={{
+                          borderRadius: '10px',
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                        }}
+                      />
+                    </a>
+                  ) : (
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -61,7 +76,7 @@ export default function About() {
                         objectFit: 'cover',
                       }}
                     />
-                  </a>
+                  )}
                 </div>
                 <div className="flex flex-row p-4">
                   <div className="flex flex-col">
