@@ -3,10 +3,17 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 type Data = any
 const nodemailer = require('nodemailer')
 
+const email_service = {
+  host: process.env.EMAIL_PROTOCOL_HOST,
+  port: process.env.EMAIL_PROTOCOL_PORT
+}
+
 const auth = {
   user: process.env.WEB_MAILER,
   pass: process.env.WEB_MAILER_PASSWORD,
 }
+
+const recipient = process.env.EMAIL_TO
 
 export default async function handler(
   req: NextApiRequest,
@@ -15,8 +22,8 @@ export default async function handler(
   const { name, email, subject, message } = req.body
 
   const mailData = {
-    to: process.env.EMAIL_TO,
-    from: process.env.WEB_MAILER,
+    to: recipient,
+    from: auth.user,
     name: name,
     subject: subject,
     text: `Email: ${email}.\n\nMessage: ${message}`,
@@ -24,11 +31,13 @@ export default async function handler(
   }
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.titan.email',
+    host: email_service.host,
     secure: true,
-    port: 465,
+    port: email_service.port,
     auth: auth,
   })
+
+  console.log("auth: ", auth)
 
   const server = await new Promise((resolve, reject) => {
     // verify connection configuration

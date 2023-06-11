@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, Key } from 'react'
-import { vcrOsdMono } from '../../../../styles/fonts'
+import { vcrOsdMono } from '../../app/styles/fonts'
 import { RepositoryCard } from './RepositoryCard'
 
 export default function Repositories() {

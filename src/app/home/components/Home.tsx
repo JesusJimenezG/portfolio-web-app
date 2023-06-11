@@ -1,11 +1,11 @@
 'use client'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { OpenAIDataType, ProfileDataType } from '../../lib/types/types'
+import { OpenAIDataType, ProfileDataType } from '../../../types/types'
 import styles from '../styles/hero.module.css'
 import { lora, vcrOsdMono, vt323 } from '../../styles/fonts'
 import useSWR from 'swr'
-import HireMe from '../../lib/shared/components/about/HireMe'
+import HireMe from '../../../components/about/HireMe'
 import QRCode from 'react-qr-code'
 
 const fetcher = (url: string) =>

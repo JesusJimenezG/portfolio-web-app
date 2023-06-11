@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Stripes } from '../../home/components/Home'
-import { dsDigital, vcrOsdMono } from '../../styles/fonts'
+import { Stripes } from './home/components/Home'
+import { dsDigital, vcrOsdMono } from './styles/fonts'
 
 const routes = [
   { text: 'Home', href: '/' },

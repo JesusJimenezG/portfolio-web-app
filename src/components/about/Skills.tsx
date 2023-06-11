@@ -1,6 +1,6 @@
 import { Key } from 'react'
-import { dsDigital, vcrOsdMono } from '../../../../styles/fonts'
-import { SkillsDataType } from '../../../types/types'
+import { dsDigital, vcrOsdMono } from '../../app/styles/fonts'
+import { SkillsDataType } from '../../types/types'
 
 export const Skills = ({ skills }: { skills: SkillsDataType }) => {
   return (

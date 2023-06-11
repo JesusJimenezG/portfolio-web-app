@@ -1,4 +1,4 @@
-import { vcrOsdMono } from '../../../../styles/fonts'
+import { vcrOsdMono } from '../../app/styles/fonts'
 
 const links = {
   upwork: 'https://www.upwork.com/freelancers/~0136891f6e1d316648',

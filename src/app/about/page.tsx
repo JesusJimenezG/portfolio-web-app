@@ -1,8 +1,8 @@
 import { lora, mukta, playfairDisplay, vcrOsdMono } from '../styles/fonts'
-import { Skills } from '../lib/shared/components/about/Skills'
+import { Skills } from '../../components/about/Skills'
 import { profile } from '../../pages/api/profile'
 import Image from 'next/image'
-import Repositories from '../lib/shared/components/github/Repositories'
+import Repositories from '../../components/github/Repositories'
 
 export default function About() {
   // const profileResponse = use(getProfile())

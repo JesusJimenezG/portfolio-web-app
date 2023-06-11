@@ -1,8 +1,8 @@
 // import './globals.css'
-import { Navigation } from './lib/shared/NavBar'
+import { Navigation } from './NavBar'
 import './styles/output.css'
-import { SocialMedia } from './lib/shared/components/about/SocialMedia'
-import { AnalyticsWrapper } from './lib/shared/components/analytics/Analytics'
+import { SocialMedia } from '../components/about/SocialMedia'
+import { AnalyticsWrapper } from '../components/analytics/Analytics'
 import { dsDigital, lora, raleway, vcrOsdMono, vt323 } from './styles/fonts'
 
 export default function RootLayout({
@@ -12,16 +12,13 @@ export default function RootLayout({
 }) {
   // const parent = document.getElementById('root')
   return (
-    <html
-      lang="en"
-      className={`${vcrOsdMono.variable} ${dsDigital.variable} ${vt323.variable} ${lora.style} ${raleway.variable}}`}
-    >
-      <head>
+    <html lang="en">
+      {/* <head>
         <script
           src="https://kit.fontawesome.com/1e9272c1ba.js"
           crossOrigin="anonymous"
         ></script>
-      </head>
+      </head> */}
       <body>
         <Navigation />
         <main

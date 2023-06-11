@@ -1,4 +1,4 @@
-import { RepositoryDataType } from '../../../types/types'
+import { RepositoryDataType } from '../../types/types'
 
 export const RepositoryCard = ({ repo }: { repo: RepositoryDataType }) => {
   return (

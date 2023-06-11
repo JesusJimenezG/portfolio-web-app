@@ -1,5 +1,5 @@
 'use client'
-import { vcrOsdMono } from '../../../../styles/fonts'
+import { vcrOsdMono } from '../../app/styles/fonts'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import React from 'react'
